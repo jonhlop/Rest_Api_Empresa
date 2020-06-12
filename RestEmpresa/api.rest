@@ -1,7 +1,8 @@
-
+//SACA TODOS LOS EMPLEADOS DE LA BBDD
 GET http://localhost:3000/api/empleados
 
 ###
+//INSERTA UN NUEVO EMPLEADO EN LA BBDD
 POST http://localhost:3000/api/empleados
 Content-Type: application/json
 
@@ -18,10 +19,11 @@ Content-Type: application/json
 
 
 ###
+// BORRAR UN EMPLEADO POR ID
 DELETE http://localhost:3000/api/empleados/10
 
 ###
-
+//EDITAR UN EMPLEADO CON ID 
 PUT http://localhost:3000/api/empleados/13
 Content-Type: application/json
 
