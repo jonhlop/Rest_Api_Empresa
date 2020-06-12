@@ -1,0 +1,33 @@
+extends ../layout
+
+block content
+    h2.mt-5 Edita un Empleado
+    form(action="/empleados/update", method="POST")
+        .form-group
+            label Nombre
+            input.form-control(type="text", name="nombre" , value=empleado.nombre)
+        .form-group
+            label DNI
+            input.form-control(type="text", name="dni" , value=empleado.dni)
+        .form-group
+            label Sexo
+            select.form-control(name="sexo", autocomplete='off')
+                option(value="M", selected=(empleado.sexo === 'M')) Masculino
+                option(value="F", selected=(empleado.sexo === 'F')) Femenino
+        .form-group
+            label Fecha_nacimiento
+            input.form-control(type="text", name="fecha_nacimiento" , value=empleado.fecha_nacimiento)
+        .form-group
+            label Salario
+            input.form-control(type="number", name="salario" , value=empleado.salario)
+        .form-group
+            label Cargo
+            input.form-control(type="text", name="cargo", value=empleado.cargo)
+        .form-group
+            label Id-Jefe
+            input.form-control(type="text", name="fk_jefe" , value=empleado.fk_jefe)
+        .form-group
+            label Departamento
+            input.form-control(type="text", name="fk_departamento" , value=empleado.fk_departamento)
+        input(type="hidden", name="idEmpleado", value=empleado.id)
+        input.btn.btn-info.btn-block(type="submit", value="Enviar")

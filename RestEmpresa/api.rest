@@ -1,0 +1,38 @@
+
+GET http://localhost:3000/api/empleados
+
+###
+POST http://localhost:3000/api/empleados
+Content-Type: application/json
+
+{
+    "nombre": "Jonathan",
+    "dni": "025535933H",
+    "sexo": "M",
+    "fecha_nacimiento": "1997/01/23",
+    "salario": 19900,
+    "cargo": "Director de producto",
+    "fk_departamento": 2,
+    "fk_jefe": 1
+}
+
+
+###
+DELETE http://localhost:3000/api/empleados/10
+
+###
+
+PUT http://localhost:3000/api/empleados/13
+Content-Type: application/json
+
+{
+    "nombre": "Juan",
+    "dni": "025535553H",
+    "sexo": "M",
+    "fecha_nacimiento": "1987/01/23",
+    "salario": 11900,
+    "cargo": "Director de producto",
+    "fk_departamento": 3,
+    "fk_jefe": 0
+}
+

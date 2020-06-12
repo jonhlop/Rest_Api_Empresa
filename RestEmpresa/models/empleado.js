@@ -36,6 +36,62 @@ const create = ({
   });
 };
 
+const getById = (pEmpleadoId) => {
+  return new Promise((resolve, reject) => {
+    db.query('select * from empleados where id = ?', [pEmpleadoId], (err, rows) => {
+      if (err) reject(err);
+      if (rows.length !== 1) reject('El id no existe');
+      resolve(rows[0]);
+    })
+  })
+}
+
+
+const updateById = (pEmpleadoId, {
+  nombre,
+  dni,
+  sexo,
+  fecha_nacimiento,
+  salario,
+  cargo,
+  fk_departamento,
+  fk_jefe
+}) => {
+  return new Promise((resolve, reject) => {
+    db.query(
+      'update empleados set nombre = ?, dni = ?, sexo = ?,fecha_nacimiento = ?, salario = ?, cargo= ?, fk_departamento = ?, fk_jefe= ? where id =?',
+      [nombre, dni,
+        sexo,
+        fecha_nacimiento,
+        salario,
+        cargo,
+        fk_departamento,
+        fk_jefe,
+        pEmpleadoId
+      ],
+      (err, result) => {
+        if (err) reject(err);
+        resolve(result);
+      })
+  });
+}
+
+
+const deleteById = (pEmpleadoId) => {
+  return new Promise((resolve, reject) => {
+    db.query('delete from empleados where id = ?', [pEmpleadoId], (err, result) => {
+      if (err) reject(err);
+      resolve(result);
+    });
+  });
+}
+
+
+
 module.exports = {
-  getAll, create
+  getAll,
+  getById,
+  create,
+  updateById,
+  deleteById
 };

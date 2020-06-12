@@ -3,6 +3,7 @@ extends ../layout
 
 block content
     h2.mt-5 Lista de todos los empleados
+        a.btn.btn-info.btn-sm(href="/empleados/new") Crear Nuevo empleado
     table.table
         thead
             tr
@@ -15,6 +16,7 @@ block content
                 th Cargo
                 th fk_Departamento
                 th fk_jefe
+                th Acciones
         tbody
             each empleado in empleados
                 tr
@@ -27,5 +29,6 @@ block content
                     td=empleado.cargo
                     td=empleado.fk_departamento
                     td=empleado.fk_jefe
-                    
-                       
+                    td 
+                        a.btn.btn-danger.btn-sm.ml-1(href="/empleados/delete/"+empleado.id) Borrar
+                        a.btn.btn-primary.btn-sm.ml-1(href="/empleados/edit/"+empleado.id) Editar                   
