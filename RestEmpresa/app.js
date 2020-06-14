@@ -6,7 +6,7 @@ var logger = require("morgan");
 const cors = require("cors");
 
 var empleadosRouter = require("./routes/empleados");
-
+var departamentosRouter = require("./routes/departamentos")
 const apiRouter = require('./routes/api');
 
 require("dotenv").config();
@@ -30,6 +30,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/empleados", empleadosRouter);
+app.use("/departamentos", departamentosRouter);
 app.use('/api', apiRouter);
 
 
