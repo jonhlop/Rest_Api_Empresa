@@ -38,3 +38,32 @@ Content-Type: application/json
     "fk_jefe": 0
 }
 
+###
+//SACA TODOS LOS DEPARTAMENTOS
+GET http://localhost:3000/api/departamentos
+
+###
+//INSERTA UN NUEVO DEPARTAMENTO EN LA BBDD
+POST http://localhost:3000/api/departamentos
+Content-Type: application/json
+
+{
+    "nombre": "AdministracionIT",
+    "ciudad": "Ciudad real"
+   
+}
+
+###
+//EDITAR UN DEPARTAMENTO CON ID 
+PUT http://localhost:3000/api/departamentos/1
+Content-Type: application/json
+
+{
+    "nombre": "Direccion",
+    "ciudad": "Madrid"
+    
+}
+
+###
+// BORRAR UN DEPARTAMENTO POR ID
+DELETE http://localhost:3000/api/departamentos/2
