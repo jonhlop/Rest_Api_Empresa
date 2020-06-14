@@ -1,0 +1,73 @@
+# Rest_Api_Empresa
+EMPLEADOS
+//SACA TODOS LOS EMPLEADOS DE LA BBDD
+GET http://localhost:3000/api/empleados
+
+###
+//INSERTA UN NUEVO EMPLEADO EN LA BBDD
+POST http://localhost:3000/api/empleados
+Content-Type: application/json
+
+{
+    "nombre": "Jonathan",
+    "dni": "025535933H",
+    "sexo": "M",
+    "fecha_nacimiento": "1997/01/23",
+    "salario": 19900,
+    "cargo": "Director de producto",
+    "fk_departamento": 2,
+    "fk_jefe": 1
+}
+
+
+###
+// BORRAR UN EMPLEADO POR ID
+DELETE http://localhost:3000/api/empleados/10
+
+###
+//EDITAR UN EMPLEADO CON ID 
+PUT http://localhost:3000/api/empleados/13
+Content-Type: application/json
+
+{
+    "nombre": "Juan",
+    "dni": "025535553H",
+    "sexo": "M",
+    "fecha_nacimiento": "1987/01/23",
+    "salario": 11900,
+    "cargo": "Director de producto",
+    "fk_departamento": 3,
+    "fk_jefe": 0
+}
+##
+DEPARTAMENTOS
+
+###
+//SACA TODOS LOS DEPARTAMENTOS
+GET http://localhost:3000/api/departamentos
+
+###
+//INSERTA UN NUEVO DEPARTAMENTO EN LA BBDD
+POST http://localhost:3000/api/departamentos
+Content-Type: application/json
+
+{
+    "nombre": "AdministracionIT",
+    "ciudad": "Ciudad real"
+   
+}
+
+###
+//EDITAR UN DEPARTAMENTO CON ID 
+PUT http://localhost:3000/api/departamentos/1
+Content-Type: application/json
+
+{
+    "nombre": "Direccion",
+    "ciudad": "Madrid"
+    
+}
+
+###
+// BORRAR UN DEPARTAMENTO POR ID
+DELETE http://localhost:3000/api/departamentos/2
