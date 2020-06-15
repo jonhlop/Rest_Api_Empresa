@@ -8,7 +8,7 @@ Content-Type: application/json
 
 {
     "nombre": "Jonathan",
-    "dni": "025535933H",
+    "dni": "02553593H",
     "sexo": "M",
     "fecha_nacimiento": "1997/01/23",
     "salario": 19900,

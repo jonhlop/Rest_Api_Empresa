@@ -19,7 +19,7 @@ router.get('/', (req, res) => {
 //POST http://localhost:3000/api/empleados
 // Crea un nuevo empleado en la BD
 router.post('/',  [
-    check('dni', 'El dni es obligatorio y debe tener un formato correcto').exists().isLength({min: 10}),
+    check('dni', 'El dni es obligatorio y debe tener un formato correcto').exists().matches(/(^([0-9]{8,8}\-[A-Z])|^)$/,"i"),
     check('nombre', 'El campo nombre es obligatorio').exists().isLength({ min: 3 })
 ], async (req, res) => {
 
